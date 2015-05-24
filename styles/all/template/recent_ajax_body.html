@@ -1,0 +1,50 @@
+<!-- IF S_RECENT_MARQUE -->
+
+	<!-- IF .topicrow -->
+		<!-- BEGIN topicrow -->
+		| <b><a href="{topicrow.U_TOPIC}">{topicrow.TOPIC_TITLE}</a></b> |
+		<!-- END topicrow -->
+	<!-- ENDIF -->
+
+<!-- ELSE -->
+
+<div class="forumbg">
+	<div class="inner">
+	<ul class="topiclist"><li class="header"><dl class="icon"><dt>{L_SEARCH_ACTIVE_TOPICS}</dt></dl></li></ul>
+	<!-- BEGIN topicrow -->
+	<!-- IF .topicrow.first_post_text --><div class="post <!-- IF topicrow.S_ROW_COUNT is odd -->bg1<!-- ELSE -->bg2<!-- ENDIF -->"><!-- ENDIF -->
+		<ul class="topiclist topics">
+			<li<!-- IF not .topicrow.first_post_text --> class="row <!-- IF topicrow.S_ROW_COUNT is odd -->bg1<!-- ELSE -->bg2<!-- ENDIF -->"<!-- ENDIF -->>
+				<div class="inner">
+					<div class="small-icon icon-search-active" style="margin: 4px">
+						<a href="{topicrow.U_TOPIC}" class="topictitle">{topicrow.TOPIC_TITLE}</a>
+						<!-- IF topicrow.TOPIC_REPLIES >= 0 -->
+						<div class="right-box"><a href="{topicrow.U_LAST_POST}">{L_POSTS}{L_COLON} {topicrow.TOPIC_REPLIES}</a></div>
+						<!-- ENDIF -->
+					</div>
+				</div>
+			</li>
+		</ul>
+
+		<!-- BEGIN first_post_text -->
+		<div class="inner">
+		<div class="postbody" style="width: 100%!important;">
+			<div class="content">{topicrow.first_post_text.TOPIC_FIRST_POST_TEXT}</div>
+				<!-- IF topicrow.first_post_text.S_HAS_ATTACHMENTS -->
+				<dl class="attachbox">
+					<dt>{L_ATTACHMENTS}</dt>
+					<!-- BEGIN attachment -->
+						<dd>{topicrow.first_post_text.attachment.DISPLAY_ATTACHMENT}</dd>
+					<!-- END attachment -->
+				</dl>
+				<!-- ENDIF -->
+			</div>
+		</div>
+		<!-- END first_post_text -->
+
+	<!-- IF .topicrow.first_post_text --></div><!-- ENDIF -->
+	<!-- END topicrow -->
+	</div>
+</div>
+
+<!-- ENDIF -->

@@ -1,0 +1,44 @@
+<!-- IF S_RECENT_TOPICS -->
+<!-- Recent topics for JS && Anvar BB3.Mobi -->
+<!-- IF S_RECENT_MARQUE -->
+	<!-- INCLUDEJS @bb3mobi_recent_topics/crawl.js -->
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$.ajax({
+			url: "{U_RECENT_CRAWL}",
+			type: "GET",
+			cache: true,
+			success: function(data) {
+				$("#recent_topics").html(data);
+				marqueeInit({
+					uniqueid: 'recent_topics',
+					style: {
+						'padding': '0px',
+						'width': '99%',
+						'margin': '0 auto'
+					},
+					inc: 4, //speed - pixel increment for each iteration of this marquee's movement
+					mouse: 'cursor driven', //mouseover behavior ('pause' 'cursor driven' or false)
+					moveatleast: 1,
+					neutral: 600,
+					savedirection: false
+				});
+			}
+		});
+	});
+	</script>
+<!-- ELSE -->
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$.ajax({
+			url: "{U_RECENT_TOPICS}",
+			type: "GET",
+			cache: true,
+			success: function(data) {
+				$("#recent_topics").html(data);
+			}
+		});
+	});
+	</script>
+<!-- ENDIF -->
+<!-- ENDIF -->

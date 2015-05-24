@@ -1,0 +1,19 @@
+services:
+    bb3mobi.recent_topics.listener:
+        class: bb3mobi\recent_topics\event\listener
+        arguments:
+            - @config
+            - @template
+            - @controller.helper
+        tags:
+            - { name: event.listener }
+    bb3mobi.recent_topics.controller:
+        class: bb3mobi\recent_topics\controller\recent
+        arguments:
+            - @auth
+            - @config
+            - @request
+            - @template
+            - @dbal.conn
+            - %core.root_path%
+            - %core.php_ext%

@@ -1,0 +1,41 @@
+{
+    "name": "bb3mobi/recent_topics",
+    "type": "phpbb-extension",
+    "description": "Extension allows you showing public topics of your phpBB3 board on your site with their first posts and attachments (customizable in acp).",
+    "homepage": "http://bb3.mobi",
+    "keywords": ["recent", "topics", "index", "page", "ajax", "java script"],
+    "version": "1.0.0",
+    "time": "2015-02-13",
+    "license": "GPL-2.0",
+    "authors": [
+        {
+            "name": "Xpert",
+            "homepage": "http://www.phpbbguru.net",
+            "role": "Author mod phpBB2"
+        },
+        {
+            "name": "rxu",
+            "homepage": "http://www.phpbbguru.net",
+            "role": "Mod in phpBB3.0"
+        },
+        {
+            "name": "John Davenport Scheuer",
+            "homepage": "http://www.dynamicdrive.com/forums/",
+            "role": "Text and/or Image Crawler Script ©2009"
+        },
+        {
+            "name": "Anvar",
+            "homepage": "http://apwa.ru",
+            "role": "Developer Extension"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.3"
+    },
+    "extra": {
+        "display-name": "Recent Topics for JS",
+        "soft-require": {
+        "phpbb/phpbb": "3.1.*@dev"
+        }
+    }
+}
