@@ -15,7 +15,7 @@
 			<li<!-- IF not .topicrow.first_post_text --> class="row <!-- IF topicrow.S_ROW_COUNT is odd -->bg1<!-- ELSE -->bg2<!-- ENDIF -->"<!-- ENDIF -->>
 				<div class="inner">
 					<div class="small-icon icon-search-active" style="margin: 4px">
-						<a href="{topicrow.U_TOPIC}" class="topictitle">{topicrow.TOPIC_TITLE}</a> — {topicrow.FIRST_POST_TIME}, <span<!-- IF topicrow.POST_AUTHOR_COLOUR --> style="colour:{topicrow.TOPIC_AUTHOR_COLOUR}"<!-- ENDIF -->>{topicrow.TOPIC_AUTHOR}</span><!-- IF topicrow.TOPIC_AUTHOR_COLOUR != topicrow.POST_AUTHOR_COLOUR --> &rarr; {topicrow.LAST_POST_TIME}, <span<!-- IF topicrow.POST_AUTHOR_COLOUR --> style="colour:{topicrow.POST_AUTHOR_COLOUR}"<!-- ENDIF -->>{topicrow.LAST_POST_AUTHOR}</span><!-- ENDIF -->
+						<a href="{topicrow.U_TOPIC}" class="topictitle">{topicrow.TOPIC_TITLE}</a> — {topicrow.FIRST_POST_TIME}, <span<!-- IF topicrow.POST_AUTHOR_COLOUR --> style="color:{topicrow.TOPIC_AUTHOR_COLOUR}"<!-- ENDIF -->>{topicrow.TOPIC_AUTHOR}</span><!-- IF topicrow.TOPIC_AUTHOR_COLOUR != topicrow.POST_AUTHOR_COLOUR --> &rarr; {topicrow.LAST_POST_TIME}, <span<!-- IF topicrow.POST_AUTHOR_COLOUR --> style="color:{topicrow.POST_AUTHOR_COLOUR}"<!-- ENDIF -->>{topicrow.LAST_POST_AUTHOR}</span><!-- ENDIF -->
 						<!-- IF topicrow.TOPIC_REPLIES >= 0 -->
 						<div class="right-box"><a href="{topicrow.U_LAST_POST}"><!-- IF L_RECENT_POSTS_NAME -->{L_RECENT_POSTS_NAME}<!-- ELSE -->{L_POSTS}{L_COLON}<!-- ENDIF --> {topicrow.TOPIC_REPLIES}</a></div>
 						<!-- ENDIF -->
