@@ -27,6 +27,7 @@ $lang = array_merge($lang, array(
 	'ACP_RECENT_TOPICS_DESCRIPTION'		=> 'You can set output to last topics in forums.',
 	'ACP_RECENT_SETTINGS'				=> 'Change settings',
 	'ACP_RECENT_JAVASCRIPT'				=> 'Java Script for external output',
+	'ACP_RECENT_JAVASCRIPT_AJAX'		=> 'Java Script Ajax',
 	'ACP_RECENT_JAVASCRIPT_EXPLAIN'		=> 'You can display the latest topics on a site that uses a third-party CMS',
 
 	'ACP_RECENT_IGNORE_FORUMS'			=> 'Ignore forums',
@@ -43,5 +44,10 @@ $lang = array_merge($lang, array(
 	'ACP_RECENT_SHOW_ATTACHMENTS'		=> 'Enable attachments in posts',
 	'ACP_RECENT_SHOW_HEADER'			=> 'Connect the threads in header Forum',
 	'ACP_RECENT_SHOW_MARQUE'			=> 'Make crawl',
-	'ACP_RECENT_SHOW_MARQUE_EXPLAIN'	=> 'Text messages, attachments, and the number of responses will be ignored.',
+	'ACP_RECENT_SHOW_MARQUE_EXPLAIN'	=> 'Text messages, attachments, and the number of responses will be ignored.<br />Should be install extension: "Rotation for blocks"',
+
+	'ACP_RECENT_TITLE'				=> 'Name of block',
+	'ACP_RECENT_TITLE_EXPLAIN'		=> 'You can replace the default name "Active topics"<br />example: "Announcements"',
+	'ACP_RECENT_POSTS_NAME'			=> 'Name Posts',
+	'ACP_RECENT_POSTS_NAME_EXPLAIN'	=> 'You can replace the default name "messages" to counter',
 ));

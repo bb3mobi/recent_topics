@@ -11,6 +11,7 @@ services:
         class: bb3mobi\recent_topics\controller\recent
         arguments:
             - @auth
+            - @user
             - @config
             - @request
             - @template

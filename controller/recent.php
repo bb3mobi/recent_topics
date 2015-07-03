@@ -23,6 +23,9 @@ class recent
 	/** @var \phpbb\auth\auth */
 	protected $auth;
 
+	/** @var \phpbb\user */
+	protected $user;
+
 	/** @var \phpbb\config\config */
 	protected $config;
 
@@ -38,9 +41,10 @@ class recent
 	protected $phpbb_root_path;
 	protected $php_ext;
 
-	public function __construct(\phpbb\auth\auth $auth, \phpbb\config\config $config, \phpbb\request\request_interface $request, \phpbb\template\template $template, \phpbb\db\driver\driver_interface $db, $phpbb_root_path, $php_ext)
+	public function __construct(\phpbb\auth\auth $auth, \phpbb\user $user, \phpbb\config\config $config, \phpbb\request\request_interface $request, \phpbb\template\template $template, \phpbb\db\driver\driver_interface $db, $phpbb_root_path, $php_ext)
 	{
 		$this->auth = $auth;
+		$this->user = $user;
 		$this->config = $config;
 		$this->request = $request;
 		$this->template = $template;
@@ -56,7 +60,12 @@ class recent
 
 		$crawl = $this->request->variable('mode', '');
 
-		$this->template->assign_var('S_RECENT_MARQUE', ($this->config['recent_show_marque'] && $crawl) ? true: false);
+		$this->template->assign_vars(array(
+			'L_RECENT_TITLE'		=> $this->config['recent_title'],
+			'L_RECENT_POSTS_NAME'	=> $this->config['recent_posts_name'],
+			'S_RECENT_MARQUE'		=> ($this->config['recent_show_marque'] && $crawl) ? true: false
+			)
+		);
 
 		$http_headers = array(
 			// application/xhtml+xml not used because of IE
@@ -187,11 +196,16 @@ class recent
 			}
 
 			$this->template->assign_block_vars('topicrow', array(
-				'U_TOPIC'			=> $viewtopic_url . '?t=' . $row['topic_id'],
-				'U_LAST_POST'		=> $viewtopic_url . '?p=' . $row['topic_last_post_id'] . '#' . $row['topic_last_post_id'],
-				'TOPIC_TITLE'		=> $topic_title,
-				'TOPIC_REPLIES'		=> (isset($replies)) ? $replies : '',
-				'LAST_POST_AUTHOR'	=> get_username_string('username', $row['topic_last_poster_id'], $row['topic_last_poster_name'], $row['topic_last_poster_colour']),
+				'U_TOPIC'				=> $viewtopic_url . '?t=' . $row['topic_id'],
+				'U_LAST_POST'			=> $viewtopic_url . '?p=' . $row['topic_last_post_id'] . '#' . $row['topic_last_post_id'],
+				'TOPIC_TITLE'			=> $topic_title,
+				'TOPIC_REPLIES'			=> (isset($replies)) ? $replies : '',
+				'TOPIC_AUTHOR'			=> get_username_string('username', $row['topic_poster'], $row['topic_first_poster_name'], $row['topic_first_poster_colour']),
+				'TOPIC_AUTHOR_COLOUR'	=> get_username_string('colour', $row['topic_poster'], $row['topic_first_poster_name'], $row['topic_first_poster_colour']),
+				'FIRST_POST_TIME'		=> $this->user->format_date($row['topic_time']),
+				'LAST_POST_TIME'		=> $this->user->format_date($row['topic_last_post_time']),
+				'LAST_POST_AUTHOR'		=> get_username_string('username', $row['topic_last_poster_id'], $row['topic_last_poster_name'], $row['topic_last_poster_colour']),
+				'POST_AUTHOR_COLOUR'	=> get_username_string('colour', $row['topic_last_poster_id'], $row['topic_last_poster_name'], $row['topic_last_poster_colour']),
 			));
 
 			if ($this->config['recent_show_first_post'] && !$crawl)

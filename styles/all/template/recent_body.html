@@ -1,7 +1,7 @@
 <!-- IF .topicrow -->
-document.writeln('<ul class="recent">\n');
+document.writeln('<h3><!-- IF L_RECENT_TITLE -->{L_RECENT_TITLE}<!-- ELSE -->{L_SEARCH_ACTIVE_TOPICS}<!-- ENDIF --></h3><ul class="recent">\n');
 <!-- BEGIN topicrow -->
-document.writeln('<li class="title"><a href="{topicrow.U_TOPIC}">{topicrow.TOPIC_TITLE}</a><!-- IF topicrow.TOPIC_REPLIES --> &rarr; <a href="{topicrow.U_LAST_POST}">{topicrow.TOPIC_REPLIES} {L_MESSAGES}</a><!-- ENDIF --> &rarr; {topicrow.LAST_POST_AUTHOR}</li>\n');
+document.writeln('<li class="title"><a href="{topicrow.U_LAST_POST}">{topicrow.TOPIC_TITLE}</a> — {topicrow.LAST_POST_TIME}, <span<!-- IF topicrow.POST_AUTHOR_COLOUR --> style="colour:{topicrow.POST_AUTHOR_COLOUR}"<!-- ENDIF -->>{topicrow.LAST_POST_AUTHOR}</span><!-- IF topicrow.TOPIC_REPLIES --> &rarr; <!-- IF L_RECENT_POSTS_NAME -->{L_RECENT_POSTS_NAME}<!-- ELSE -->{L_MESSAGES}<!-- ENDIF --> {topicrow.TOPIC_REPLIES}<!-- ENDIF --></li>\n');
 	<!-- BEGIN first_post_text -->
 	document.writeln('<li class="content">{topicrow.first_post_text.TOPIC_FIRST_POST_TEXT}\n');
 		<!-- BEGIN attachment -->

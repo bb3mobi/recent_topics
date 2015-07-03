@@ -41,6 +41,8 @@ class recent_module
 					'recent_show_attachments'	=> array('lang' => 'ACP_RECENT_SHOW_ATTACHMENTS',	'validate' => 'bool',		'type' => 'radio:yes_no', 'explain' => false),
 					'recent_show_header'		=> array('lang' => 'ACP_RECENT_SHOW_HEADER',		'validate' => 'bool',		'type' => 'radio:yes_no', 'explain' => false),
 					'recent_show_marque'		=> array('lang' => 'ACP_RECENT_SHOW_MARQUE',		'validate' => 'bool',		'type' => 'radio:yes_no', 'explain' => true),
+					'recent_title'				=> array('lang' => 'ACP_RECENT_TITLE',				'validate' => 'string',		'type' => 'text:20:40', 'explain' => true),
+					'recent_posts_name'			=> array('lang' => 'ACP_RECENT_POSTS_NAME',			'validate' => 'string',		'type' => 'text:20:40', 'explain' => true),
 				'legend2'	=> 'ACP_SUBMIT_CHANGES',
 			),
 		);

@@ -4,7 +4,7 @@
     "description": "Extension allows you showing public topics of your phpBB3 board on your site with their first posts and attachments (customizable in acp).",
     "homepage": "http://bb3.mobi",
     "keywords": ["recent", "topics", "index", "page", "ajax", "java script"],
-    "version": "1.0.0",
+    "version": "1.0.1",
     "time": "2015-02-13",
     "license": "GPL-2.0",
     "authors": [
@@ -17,11 +17,6 @@
             "name": "rxu",
             "homepage": "http://www.phpbbguru.net",
             "role": "Mod in phpBB3.0"
-        },
-        {
-            "name": "John Davenport Scheuer",
-            "homepage": "http://www.dynamicdrive.com/forums/",
-            "role": "Text and/or Image Crawler Script ©2009"
         },
         {
             "name": "Anvar",

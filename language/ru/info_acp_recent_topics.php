@@ -27,6 +27,7 @@ $lang = array_merge($lang, array(
 	'ACP_RECENT_TOPICS_DESCRIPTION'		=> 'Вы можете настроить вывод последних тем размещённых на форуме.',
 	'ACP_RECENT_SETTINGS'				=> 'Изменение настроек',
 	'ACP_RECENT_JAVASCRIPT'				=> 'Java Script для внешнего вывода',
+	'ACP_RECENT_JAVASCRIPT_AJAX'		=> 'Подгрузка Ajax',
 	'ACP_RECENT_JAVASCRIPT_EXPLAIN'		=> 'Вы можете вывести последние темы на сайте, который использует стороннюю CMS',
 
 	'ACP_RECENT_IGNORE_FORUMS'			=> 'Исключить форумы',
@@ -43,5 +44,10 @@ $lang = array_merge($lang, array(
 	'ACP_RECENT_SHOW_ATTACHMENTS'		=> 'Включить вложения в сообщениях',
 	'ACP_RECENT_SHOW_HEADER'			=> 'Подключить темы в шапке форума',
 	'ACP_RECENT_SHOW_MARQUE'			=> 'Сделать бегущей строкой',
-	'ACP_RECENT_SHOW_MARQUE_EXPLAIN'	=> 'Текст сообщения, вложения и количество ответов будут проигнорированы.',
+	'ACP_RECENT_SHOW_MARQUE_EXPLAIN'	=> 'Текст сообщения, вложения и количество ответов будут проигнорированы.<br />Необходимо установить расширение: "Rotation for blocks"',
+
+	'ACP_RECENT_TITLE'				=> 'Название блока',
+	'ACP_RECENT_TITLE_EXPLAIN'		=> 'Вы можете заменить стандартное название "Активные темы"<br />например: "Объявления"',
+	'ACP_RECENT_POSTS_NAME'			=> 'Счётчик сообщений',
+	'ACP_RECENT_POSTS_NAME_EXPLAIN'	=> 'Вы можете заменить стандартное название "Сообщения" перед счётчиком',
 ));

@@ -1,25 +1,23 @@
 <!-- IF S_RECENT_MARQUE -->
 
-	<!-- IF .topicrow -->
-		<!-- BEGIN topicrow -->
+	<!-- BEGIN topicrow -->
 		| <b><a href="{topicrow.U_TOPIC}">{topicrow.TOPIC_TITLE}</a></b> |
-		<!-- END topicrow -->
-	<!-- ENDIF -->
+	<!-- END topicrow -->
 
 <!-- ELSE -->
 
 <div class="forumbg">
 	<div class="inner">
-	<ul class="topiclist"><li class="header"><dl class="icon"><dt>{L_SEARCH_ACTIVE_TOPICS}</dt></dl></li></ul>
+	<ul class="topiclist"><li class="header"><dl class="icon"><dt><!-- IF L_RECENT_TITLE -->{L_RECENT_TITLE}<!-- ELSE -->{L_SEARCH_ACTIVE_TOPICS}<!-- ENDIF --></dt></dl></li></ul>
 	<!-- BEGIN topicrow -->
 	<!-- IF .topicrow.first_post_text --><div class="post <!-- IF topicrow.S_ROW_COUNT is odd -->bg1<!-- ELSE -->bg2<!-- ENDIF -->"><!-- ENDIF -->
 		<ul class="topiclist topics">
 			<li<!-- IF not .topicrow.first_post_text --> class="row <!-- IF topicrow.S_ROW_COUNT is odd -->bg1<!-- ELSE -->bg2<!-- ENDIF -->"<!-- ENDIF -->>
 				<div class="inner">
 					<div class="small-icon icon-search-active" style="margin: 4px">
-						<a href="{topicrow.U_TOPIC}" class="topictitle">{topicrow.TOPIC_TITLE}</a>
+						<a href="{topicrow.U_TOPIC}" class="topictitle">{topicrow.TOPIC_TITLE}</a> — {topicrow.FIRST_POST_TIME}, <span<!-- IF topicrow.POST_AUTHOR_COLOUR --> style="colour:{topicrow.TOPIC_AUTHOR_COLOUR}"<!-- ENDIF -->>{topicrow.TOPIC_AUTHOR}</span><!-- IF topicrow.TOPIC_AUTHOR_COLOUR != topicrow.POST_AUTHOR_COLOUR --> &rarr; {topicrow.LAST_POST_TIME}, <span<!-- IF topicrow.POST_AUTHOR_COLOUR --> style="colour:{topicrow.POST_AUTHOR_COLOUR}"<!-- ENDIF -->>{topicrow.LAST_POST_AUTHOR}</span><!-- ENDIF -->
 						<!-- IF topicrow.TOPIC_REPLIES >= 0 -->
-						<div class="right-box"><a href="{topicrow.U_LAST_POST}">{L_POSTS}{L_COLON} {topicrow.TOPIC_REPLIES}</a></div>
+						<div class="right-box"><a href="{topicrow.U_LAST_POST}"><!-- IF L_RECENT_POSTS_NAME -->{L_RECENT_POSTS_NAME}<!-- ELSE -->{L_POSTS}{L_COLON}<!-- ENDIF --> {topicrow.TOPIC_REPLIES}</a></div>
 						<!-- ENDIF -->
 					</div>
 				</div>

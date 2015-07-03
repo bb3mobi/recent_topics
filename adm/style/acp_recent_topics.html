@@ -10,9 +10,25 @@
 <fieldset>
 	<legend>{L_TITLE_EXPLAIN}</legend>
 	<dl>
-		<dt><label for="recent_topics">{L_ACP_RECENT_JAVASCRIPT}{L_COLON}</label>
+		<dt><label for="recent_javascript">{L_ACP_RECENT_JAVASCRIPT}{L_COLON}</label></dt>
+		<dd><input type="text" id="recent_javascript" style="min-width:50%" value='&lt;script type="text/javascript" src="{U_RECENT_TOPICS}"&gt;&lt;/script&gt;' /></dd>
+	</dl>
+	<dl>
+		<dt><label for="recent_javascript_ajax">{L_ACP_RECENT_JAVASCRIPT_AJAX}{L_COLON}</label>
 		<br /><span>{L_ACP_RECENT_JAVASCRIPT_EXPLAIN}</span></dt>
-		<dd><input type="text" style="min-width:50%" value='&lt;script type="text/javascript" src="{U_RECENT_TOPICS}"&gt;&lt;/script&gt;' /></dd>
+		<dd><textarea id="recent_javascript_ajax">
+&lt;script type="text/javascript"&gt;
+$(document).ready(function() {
+	$.ajax({
+		url: "{U_RECENT_TOPICS}",
+		type: "GET",
+		cache: true,
+		success: function(data) {
+			$("#recent_topics").html(data);
+		}
+	});
+});
+&lt;/script&gt;</textarea></dd>
 	</dl>
 </fieldset>
 

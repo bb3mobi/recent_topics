@@ -1,7 +1,6 @@
 <!-- IF S_RECENT_TOPICS -->
 <!-- Recent topics for JS && Anvar BB3.Mobi -->
 <!-- IF S_RECENT_MARQUE -->
-	<!-- INCLUDEJS @bb3mobi_recent_topics/crawl.js -->
 	<script type="text/javascript">
 	$(document).ready(function() {
 		$.ajax({
@@ -10,6 +9,7 @@
 			cache: true,
 			success: function(data) {
 				$("#recent_topics").html(data);
+				<!-- IF S_CRAWLER -->
 				marqueeInit({
 					uniqueid: 'recent_topics',
 					style: {
@@ -17,12 +17,13 @@
 						'width': '99%',
 						'margin': '0 auto'
 					},
-					inc: 4, //speed - pixel increment for each iteration of this marquee's movement
-					mouse: 'cursor driven', //mouseover behavior ('pause' 'cursor driven' or false)
-					moveatleast: 1,
-					neutral: 600,
-					savedirection: false
+					inc: {S_CRAWLER_SPEED},
+					mouse: '<!-- IF S_CRAWLER_BEHAVIOR -->cursor driven<!-- ELSE -->pause<!-- ENDIF -->',
+					moveatleast: {S_CRAWLER_MOVEATLEAST},
+					neutral: {S_CRAWLER_NEUTRAL},
+					savedirection: <!-- IF S_CRAWLER_DIRECTION -->true<!-- ELSE -->false<!-- ENDIF -->,
 				});
+				<!-- ENDIF -->
 			}
 		});
 	});
