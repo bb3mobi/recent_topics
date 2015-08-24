@@ -39,9 +39,9 @@ if (empty($lang) || !is_array($lang))
 //
 
 $lang = array_merge($lang, array(
-	'ACP_RECENT_TOPICS_TITLE'			=> 'Sujets récents JS',
+	'ACP_RECENT_TOPICS_TITLE'			=> 'Sujets actifs JS',
 
-	'ACP_RECENT_TOPICS'					=> 'Sujets récents JS',
+	'ACP_RECENT_TOPICS'					=> 'Sujets actifs JS',
 	'ACP_RECENT_TOPICS_EXPLAIN'			=> 'Anvar &copy; <a href="http://bb3.mobi">BB3.Mobi</a>',
 	'ACP_RECENT_TOPICS_DESCRIPTION'		=> 'Configuration de l’affichage des derniers sujets publiés dans les forums.',
 	'ACP_RECENT_SETTINGS'				=> 'Modifier les paramètres',
@@ -61,7 +61,7 @@ $lang = array_merge($lang, array(
 	'ACP_RECENT_SHOW_REPLIES'			=> 'Afficher le nombre de réponses des sujets',
 	'ACP_RECENT_SHOW_FIRST_POST'		=> 'Afficher le contenu du premier message des sujets',
 	'ACP_RECENT_SHOW_ATTACHMENTS'		=> 'Afficher les fichiers joints du premier message des sujets',
-	'ACP_RECENT_SHOW_HEADER'			=> 'Activer l’affichage des sujets récents en haut du forum',
+	'ACP_RECENT_SHOW_HEADER'			=> 'Activer l’affichage des sujets actifs en haut du forum',
 	'ACP_RECENT_SHOW_MARQUE'			=> 'Activer l’affichage par défilement des titres des sujets',
 	'ACP_RECENT_SHOW_MARQUE_EXPLAIN'	=> 'Si activé, l’affichage du contenu du premier message, des fichiers joints ainsi que du nombre de réponses sont désactivés, en lieu et place un défilement des titres des sujets est affiché.<br />L’extension suivante est nécessaire pour cette option : « <a href="http://bb3.mobi/forum/viewtopic.php?t=184">Rotation for blocks</a> ».',
 
