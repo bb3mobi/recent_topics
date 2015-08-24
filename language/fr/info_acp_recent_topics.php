@@ -52,7 +52,7 @@ $lang = array_merge($lang, array(
 	'ACP_RECENT_IGNORE_FORUMS'			=> 'Ignorer des forums',
 	'ACP_RECENT_IGNORE_FORUMS_EXPLAIN'	=> 'Permet d’ignorer les forums sélectionnés ci-dessous de l’affichage des sujets.',
 	'ACP_RECENT_ONLY_FORUMS'			=> 'Sélectionner un ou plusieurs forums',
-	'ACP_RECENT_ONLY_FORUMS_EXPLAIN'	=> 'Si l’option « Ignorer des forums » est activée, la sélection permet de choisir les forums à ignorer de l’affichage. Si la même option est désactivée, la sélection permet de choisir les forums sources de l’affichage.',
+	'ACP_RECENT_ONLY_FORUMS_EXPLAIN'	=> 'Si l’option « Ignorer des forums » est activée, la sélection permet de choisir les forums à ignorer de l’affichage. Si la même option est désactivée, la sélection permet de choisir les forums sources de l’affichage.<br />Pour sélectionner plusieurs forums, merci d’utiliser la combinaison de la touche CTRL et du clic gauche de la souris.',
 
 	'ACP_RECENT_NM_TOPICS'				=> 'Sujets à afficher',
 	'ACP_RECENT_NM_TOPICS_EXPLAIN'		=> 'Nombre de sujets à afficher.',
