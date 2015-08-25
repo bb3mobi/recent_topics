@@ -55,7 +55,7 @@ $lang = array_merge($lang, array(
 	'ACP_RECENT_ONLY_FORUMS_EXPLAIN'	=> 'Si l’option « Ignorer des forums » est activée, la sélection permet de choisir les forums à ignorer de l’affichage. Si la même option est désactivée, la sélection permet de choisir les forums sources de l’affichage.<br />Pour sélectionner plusieurs forums, merci d’utiliser la combinaison de la touche CTRL et du clic gauche de la souris.',
 
 	'ACP_RECENT_NM_TOPICS'				=> 'Sujets à afficher',
-	'ACP_RECENT_NM_TOPICS_EXPLAIN'		=> 'Nombre de sujets à afficher.',
+	'ACP_RECENT_NM_TOPICS_EXPLAIN'		=> 'Permet de saisir le nombre de sujets à afficher.',
 	'ACP_RECENT_MAX_TOPIC_LENGTH'		=> 'Nombre de caractères pour les sujets',
 	'ACP_RECENT_MAX_TOPIC_LENGTH_EXPLAIN'	=> 'Permet de saisir le nombre maximum de caractères à afficher. Si l’option « Afficher le contenu du premier message des sujets » est activée, cela permet de choisir le nombre de caractères du premier message, auquel cas contraire cela permet de choisir le nombre de caractères du titre du sujet.',
 	'ACP_RECENT_SHOW_REPLIES'			=> 'Afficher le nombre de réponses des sujets',
