@@ -127,6 +127,7 @@ class recent
 				$sql_forums
 				AND p.post_id = t.topic_first_post_id
 				AND t.topic_moved_id = 0
+				AND t.topic_visibility = " . ITEM_APPROVED . "
 			ORDER BY t.topic_last_post_id DESC";
 		$result = $this->db->sql_query_limit($sql, $this->config['recent_nm_topics']);
 		if (!$recent_topics = $this->db->sql_fetchrowset($result))
