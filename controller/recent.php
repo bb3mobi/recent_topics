@@ -232,17 +232,20 @@ class recent
 				}
 				$message = str_replace('./', $board_path . '/', $message);
 
-				$this->template->assign_block_vars('topicrow.first_post_text', array(
-					'TOPIC_FIRST_POST_TEXT'	=> $message,
-					'S_HAS_ATTACHMENTS'		=> ($this->config['recent_show_attachments'] && !empty($attachments[$row['post_id']])) ? true : false,
-				));
-
 				// Display not already displayed Attachments for this post, we already parsed them. ;)
 				if ($this->config['recent_show_attachments'] && !empty($attachments[$row['post_id']]))
 				{
 					// Parse attachments
 					parse_attachments($row['forum_id'], $message, $attachments[$row['post_id']], $update_count);
+				}
 
+				$this->template->assign_block_vars('topicrow.first_post_text', array(
+					'TOPIC_FIRST_POST_TEXT'	=> $message,
+					'S_HAS_ATTACHMENTS'		=> ($this->config['recent_show_attachments'] && !empty($attachments[$row['post_id']])) ? true : false,
+				));
+
+				if ($this->config['recent_show_attachments'] && !empty($attachments[$row['post_id']]))
+				{
 					foreach ($attachments[$row['post_id']] as $attachment)
 					{
 						if (!$http_ajax)
