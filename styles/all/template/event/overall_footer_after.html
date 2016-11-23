@@ -9,6 +9,9 @@
 			cache: true,
 			success: function(data) {
 				$("#recent_topics").html(data);
+
+				$('#recent_topics').trigger('recent_topics_success', [$('#recent_topics')]);
+
 				<!-- IF S_CRAWLER -->
 				marqueeInit({
 					uniqueid: 'recent_topics',
@@ -37,6 +40,8 @@
 			cache: true,
 			success: function(data) {
 				$("#recent_topics").html(data);
+
+				$('#recent_topics').trigger('recent_topics_success', [$('#recent_topics')]);
 			}
 		});
 	});
