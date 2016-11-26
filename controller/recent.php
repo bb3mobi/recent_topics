@@ -230,7 +230,7 @@ class recent
 					$message = addslashes($message);
 					$message = $this->strip_selected_tags($message, array('dl', 'dt', 'dd'));
 				}
-				$message = str_replace('./', $board_path . '/', $message);
+				$message = str_replace('"./', '"' . $board_path . '/', $message);
 
 				// Display not already displayed Attachments for this post, we already parsed them. ;)
 				if ($this->config['recent_show_attachments'] && !empty($attachments[$row['post_id']]))
@@ -316,6 +316,17 @@ class recent
 			{
 				// встретили начало bb-кода, добавляем этот код к строке-результату
 				if (preg_match('/^\[[^\]]+\][^\[]*\[\/[^\]]+\]/', $str, $match))
+				{
+					$real += utf8_strlen($match[0]);
+					$result .= $match[0];
+					continue;
+				}
+			}
+
+			if ($char == '<')
+			{
+				// встретили начало смайла, добавляем этот смайл к строке-результату
+				if (preg_match('#<!\-\- s(.*?) \-\-><img src="\{SMILIES_PATH\}\/(.*?) \/><!\-\- s\1 \-\->#', $str, $match))
 				{
 					$real += utf8_strlen($match[0]);
 					$result .= $match[0];
