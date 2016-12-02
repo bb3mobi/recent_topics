@@ -326,7 +326,42 @@ class recent
 			if ($char == '<')
 			{
 				// встретили начало смайла, добавляем этот смайл к строке-результату
-				if (preg_match('#<!\-\- s(.*?) \-\-><img src="\{SMILIES_PATH\}\/(.*?) \/><!\-\- s\1 \-\->#', $str, $match))
+				if (preg_match('#^<!\-\- s(.*?) \-\-><img src="\{SMILIES_PATH\}\/(.*?) \/><!\-\- s\1 \-\->#', $str, $match))
+				{
+					$real += utf8_strlen($match[0]);
+					$result .= $match[0];
+					continue;
+				}
+
+				if (preg_match('#^<!\-\- e \-\-><a href="mailto:(.*?)">.*?</a><!\-\- e \-\->#', $str, $match))
+				{
+					$real += utf8_strlen($match[0]);
+					$result .= $match[0];
+					continue;
+				}
+
+				if (preg_match('#^<!\-\- l \-\-><a (?:class="[\w-]+" )?href="(.*?)(?:(&amp;|\?)sid=[0-9a-f]{32})?">.*?</a><!\-\- l \-\->#', $str, $match))
+				{
+					$real += utf8_strlen($match[0]);
+					$result .= $match[0];
+					continue;
+				}
+
+				if (preg_match('#^<!\-\- ([mw]) \-\-><a (?:class="[\w-]+" )?href="(.*?)">.*?</a><!\-\- \1 \-\->#', $str, $match))
+				{
+					$real += utf8_strlen($match[0]);
+					$result .= $match[0];
+					continue;
+				}
+
+				if (preg_match('#^<!\-\- .*? \-\->#s', $str, $match))
+				{
+					$real += utf8_strlen($match[0]);
+					$result .= $match[0];
+					continue;
+				}
+
+				if (preg_match('#^<.*?>#s', $str, $match))
 				{
 					$real += utf8_strlen($match[0]);
 					$result .= $match[0];
